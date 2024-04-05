@@ -78,19 +78,19 @@ const BlockchainDetail = () => {
         <div className="text-sm">
           <div className="text-gray-500">Height</div>
           <div className="font-bold">
-            {thousandSeparator(Number(header.height))}
+            {thousandSeparator(Number(header.height || 0))}
           </div>
         </div>
         <div className="text-sm">
           <div className="text-gray-500">Bonded Token</div>
           <div className="font-bold">
-            {`${numberAbbr(Number(pool.bonded_tokens) / 1000000)}`}
+            {`${numberAbbr(Number(pool.bonded_tokens || 0) / 1000000)}`}
           </div>
         </div>
         <div className="text-sm">
           <div className="text-gray-500">Supply</div>
           <div className="font-bold">
-            {numberAbbr(Number(supplyAmount.amount) / 1000000)}
+            {numberAbbr(Number(supplyAmount.amount || 0) / 1000000)}
           </div>
         </div>
         <div className="text-sm">
