@@ -13,7 +13,7 @@ export enum ProposalVoting {
   VOTING_PERIOD = 'PROPOSAL_STATUS_VOTING_PERIOD',
 }
 
-export default function CosmosProposals() {
+const CosmosProposals = () => {
   const [selectedVote, setSelectedVote] = useState<undefined | ProposalVoting>(
     undefined
   )
@@ -49,3 +49,5 @@ export default function CosmosProposals() {
     </>
   )
 }
+
+export default CosmosProposals
