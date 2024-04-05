@@ -1,7 +1,12 @@
 import { IProposalResponse } from '@/services/cosmos-api'
-import { ProposalVoting } from '../page'
 import { Dispatch, useRef } from 'react'
 import useOutsideClick from '@/utils/useClickOutside'
+
+export enum ProposalVoting {
+  PASSED = 'PROPOSAL_STATUS_PASSED',
+  REJECTED = 'PROPOSAL_STATUS_REJECTED',
+  VOTING_PERIOD = 'PROPOSAL_STATUS_VOTING_PERIOD',
+}
 
 const VotingStatusBar = ({
   proposals,

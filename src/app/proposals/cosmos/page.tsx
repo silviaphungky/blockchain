@@ -4,14 +4,8 @@ import { PageTitle, Shimmer } from '@/components'
 import { IProposalResponse } from '@/services/cosmos-api'
 import useGetCosmosProposals from '@/services/hooks/useGetCosmosProposals'
 import { useState } from 'react'
-import VotingStatusBar from './components/VotingStatusBar'
+import VotingStatusBar, { ProposalVoting } from './components/VotingStatusBar'
 import ProposalTable from './components/ProposalTable'
-
-export enum ProposalVoting {
-  PASSED = 'PROPOSAL_STATUS_PASSED',
-  REJECTED = 'PROPOSAL_STATUS_REJECTED',
-  VOTING_PERIOD = 'PROPOSAL_STATUS_VOTING_PERIOD',
-}
 
 const CosmosProposals = () => {
   const [selectedVote, setSelectedVote] = useState<undefined | ProposalVoting>(
