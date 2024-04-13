@@ -15,7 +15,7 @@ import { useEffect, useRef } from 'react'
 import dayjs from 'dayjs'
 
 const BlockchainDetail = () => {
-  const prevTime = useRef('')
+  const prevTime = useRef(`${new Date()}`)
   const { data = {} as IBlockResponse, isLoading } = useGetCosmosLatestBlocks()
 
   const block = data?.block || {}
@@ -39,7 +39,9 @@ const BlockchainDetail = () => {
     prevTime.current = header.time
   }, [header.time])
 
-  const blockTime = dayjs(header.time).diff(prevTime.current, 'ms') / 1000
+  const blockTime = Math.abs(
+    dayjs(header.time).diff(prevTime.current, 'ms') / 1000
+  )
 
   return (
     <div className="flex justify-between items-center">
